@@ -72,5 +72,6 @@ int	ft_strlen(char *str);
 > 	 
 > 	 *str = "Hello World";
 > 	 size = ft_strlen(str);
+> 	 return (size);
 > }
 > ```

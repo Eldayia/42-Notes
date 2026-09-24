@@ -49,8 +49,14 @@ jobs:
       - name: Install Quartz plugins
         run: npx quartz plugin install
 
+      - name: Check homepage source
+        run: test -s content/index.md
+
       - name: Build Quartz
         run: npx quartz build
+
+      - name: Check generated homepage
+        run: test -s public/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

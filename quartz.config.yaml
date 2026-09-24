@@ -1,12 +1,12 @@
 # yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
 configuration:
-  pageTitle: Quartz 5
+  pageTitle: 42 / ensemble
   pageTitleSuffix: ""
   enableSPA: true
   enablePopovers: true
   analytics:
     provider: plausible
-  locale: en-US
+  locale: fr-FR
   baseUrl: eldayia.github.io/42-Notes
   ignorePatterns:
     - private
@@ -16,30 +16,30 @@ configuration:
     fontOrigin: googleFonts
     cdnCaching: true
     typography:
-      header: Schibsted Grotesk
-      body: Source Sans Pro
+      header: Inter
+      body: Inter
       code: IBM Plex Mono
     colors:
       lightMode:
-        light: "#faf8f8"
-        lightgray: "#e5e5e5"
-        gray: "#b8b8b8"
-        darkgray: "#4e4e4e"
-        dark: "#2b2b2b"
-        secondary: "#284b63"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#fff23688"
+        light: "#1e1e2e"
+        lightgray: "#313244"
+        gray: "#a6adc8"
+        darkgray: "#cdd6f4"
+        dark: "#cdd6f4"
+        secondary: "#cba6f7"
+        tertiary: "#b4befe"
+        highlight: "#313244"
+        textHighlight: "#f9e2af33"
       darkMode:
-        light: "#161618"
-        lightgray: "#393639"
-        gray: "#646464"
-        darkgray: "#d4d4d4"
-        dark: "#ebebec"
-        secondary: "#7b97aa"
-        tertiary: "#84a59d"
-        highlight: rgba(143, 159, 169, 0.15)
-        textHighlight: "#b3aa0288"
+        light: "#1e1e2e"
+        lightgray: "#313244"
+        gray: "#a6adc8"
+        darkgray: "#cdd6f4"
+        dark: "#cdd6f4"
+        secondary: "#cba6f7"
+        tertiary: "#b4befe"
+        highlight: "#313244"
+        textHighlight: "#f9e2af33"
 plugins:
   - source: "@quartz-community/created-modified-date"
     enabled: true
@@ -54,8 +54,8 @@ plugins:
     enabled: true
     options:
       theme:
-        light: github-light
-        dark: github-dark
+        light: catppuccin-mocha
+        dark: catppuccin-mocha
       keepBackground: false
     order: 20
   - source: "@quartz-community/obsidian-flavored-markdown"
@@ -81,12 +81,13 @@ plugins:
     enabled: true
     order: 50
     layout:
+      condition: not-index
       position: right
       priority: 30
   - source: "@quartz-community/crawl-links"
     enabled: true
     options:
-      markdownLinkResolution: shortest
+      markdownLinkResolution: relative
     order: 60
   - source: "@quartz-community/description"
     enabled: true
@@ -111,7 +112,7 @@ plugins:
   - source: "@quartz-community/quartz-fonts"
     enabled: true
   - source: "@quartz-themes/core"
-    enabled: true
+    enabled: false
     options:
       theme: default
       mode: both
@@ -163,7 +164,7 @@ plugins:
       position: left
       priority: 50
   - source: "@quartz-community/graph"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 10
@@ -176,18 +177,20 @@ plugins:
       groupOptions:
         grow: true
   - source: "@quartz-community/backlinks"
-    enabled: true
+    enabled: false
     layout:
       position: right
       priority: 50
   - source: "@quartz-community/article-title"
     enabled: true
     layout:
+      condition: not-index
       position: beforeBody
       priority: 10
   - source: "@quartz-community/content-meta"
     enabled: true
     layout:
+      condition: not-index
       position: beforeBody
       priority: 20
   - source: "@quartz-community/tag-list"
@@ -230,8 +233,7 @@ plugins:
     enabled: true
     options:
       links:
-        GitHub: https://github.com/jackyzha0/quartz
-        Discord Community: https://discord.gg/cRFFHYye7t
+        GitHub: https://github.com/Eldayia/42-Notes
     layout:
       position: footer
       priority: 50
@@ -258,7 +260,7 @@ plugins:
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: false
+      hidePropertiesView: true
       delimiters: ---
       language: yaml
     order: 5
