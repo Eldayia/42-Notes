@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: eldayia.github.io/42-notes
+  baseUrl: eldayia.github.io/42-Notes
   ignorePatterns:
     - private
     - templates
