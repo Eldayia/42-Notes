@@ -334,3 +334,22 @@ body[data-slug="index"] {
 body:has(article h1) .article-title {
   display: none;
 }
+
+// Constrain the callout grid: long code lines must scroll inside the block,
+// rather than enlarge its grid column and get clipped by the callout.
+article .callout > .callout-content {
+  grid-template-columns: minmax(0, 1fr);
+}
+article .callout-content > * {
+  min-width: 0;
+}
+article .callout pre {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+// Plain-text hints are prose: wrap them, including on narrow screens.
+article .callout pre > code[data-language="text"] {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  grid-template-columns: minmax(0, 1fr);
+}
