@@ -51,3 +51,39 @@ char	*ft_strdup(char *src);
 > - Si malloc échoue (par exemple, plus de mémoire sur l'ordinateur), il retourne NULL. Tu dois TOUJOURS vérifier si le pointeur retourné par malloc est NULL et retourner NULL si c'est le cas.
 > - Une fois la mémoire allouée et protégée, c'est comme un ft_strcpy classique.
 > ```
+
+> [!check]- Correction
+> ```c
+> #include <stdlib.h>
+> 
+> char	*ft_strdup(char *src)
+> {
+> 	char	*dest;
+> 	int		i;
+> 	int		len;
+> 
+> 	// 1. Calculer la longueur de src
+> 	len = 0;
+> 	while (src[len] != '\0')
+> 		len++;
+> 
+> 	// 2. Allouer la mémoire (longueur + 1 pour le '\0')
+> 	dest = (char *)malloc(sizeof(char) * (len + 1));
+> 	
+> 	// 3. Protéger le malloc
+> 	if (dest == NULL)
+> 		return (NULL);
+> 
+> 	// 4. Copier la chaîne
+> 	i = 0;
+> 	while (src[i] != '\0')
+> 	{
+> 		dest[i] = src[i];
+> 		i++;
+> 	}
+> 	dest[i] = '\0';
+> 	
+> 	// 5. Retourner la nouvelle chaîne
+> 	return (dest);
+> }
+> ```

@@ -49,3 +49,29 @@ int	ft_strlen(char *str);
 > - Tant que tu n'es pas sur le '\0', tu incrémentes ton compteur pour avancer de case en case.
 > - str[i] est équivalent à dire "le caractère à l'index i".
 > ```
+
+> [!check]- Correction
+> ```c
+> int	ft_strlen(char *str)
+> {
+> 	int	i;
+> 
+> 	i = 0;
+> 	while (str[i] != '\0')
+> 	{
+> 		i++;
+> 	}
+> 	return (i);
+> }
+> ```
+> ```c
+> int main(void)
+> {
+> 	 char *str;
+> 	 int size;
+> 	 
+> 	 *str = "Hello World";
+> 	 size = ft_strlen(str);
+> 	 return (size);
+> }
+> ```

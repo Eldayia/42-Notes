@@ -49,3 +49,34 @@ int	*ft_range(int min, int max);
 > - Gère le cas d'erreur (min >= max) dès le début de ta fonction pour retourner NULL.
 > - Utilise un index (par exemple i) partant de 0 pour remplir ton tableau, pendant que tu insères les valeurs de 'min' jusqu'à 'max'.
 > ```
+
+> [!check]- Correction
+> ```c
+> #include <stdlib.h>
+> 
+> int	*ft_range(int min, int max)
+> {
+> 	int	*tab;
+> 	int	i;
+> 	int	size;
+> 
+> 	if (min >= max)
+> 		return (NULL);
+> 
+> 	size = max - min;
+> 	// Allocation en utilisant sizeof(int) !
+> 	tab = (int *)malloc(sizeof(int) * size);
+> 	if (tab == NULL)
+> 		return (NULL);
+> 
+> 	i = 0;
+> 	while (min < max)
+> 	{
+> 		tab[i] = min;
+> 		i++;
+> 		min++;
+> 	}
+> 	
+> 	return (tab);
+> }
+> ```

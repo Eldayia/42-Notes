@@ -47,3 +47,20 @@ char	*ft_strcpy(char *dest, char *src);
 > - Attention piège : La boucle va s'arrêter au '\0' de src. Cela veut dire que le '\0' ne sera pas copié dans dest ! Tu dois le rajouter manuellement à la fin.
 > - N'oublie pas de retourner le pointeur original de dest à la fin.
 > ```
+
+> [!check]- Correction
+> ```c
+> char	*ft_strcpy(char *dest, char *src)
+> {
+> 	int	i;
+> 
+> 	i = 0;
+> 	while (src[i] != '\0')
+> 	{
+> 		dest[i] = src[i];
+> 		i++;
+> 	}
+> 	dest[i] = '\0'; // Ajout manuel du caractère de fin
+> 	return (dest);
+> }
+> ```

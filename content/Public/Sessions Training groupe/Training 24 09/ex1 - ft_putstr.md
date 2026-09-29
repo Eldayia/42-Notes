@@ -46,3 +46,33 @@ void	ft_putstr(char *str);
 > - Le & sert à donner l'adresse. Si str[i] est ton caractère, alors &str[i] est son adresse.
 > - Comme pour ft_strlen, utilise une boucle while qui s'arrête lorsqu'elle rencontre le fameux '\0'.
 > ```
+
+> [!check]- Correction
+> ```c
+> #include <unistd.h>
+> 
+> void	ft_putstr(char *str)
+> {
+> 	int	i;
+> 
+> 	i = 0;
+> 	while (str[i] != '\0')
+> 	{
+> 		write(1, &str[i], 1);
+> 		i++;
+> 	}
+> }
+> // ou while(str[i] != 0) ou while(str[i])
+> ```
+
+> [!check]- Correction compacte
+> ```c
+> #include <unistd.h>
+> 
+> void	ft_putstr(char *str)
+> {
+> 	int (i) = 0;
+> 	while (str[i])
+>		write(1, &str[i++], 1);
+> }
+> ```
